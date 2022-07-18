@@ -7,13 +7,9 @@ To run this project on your local environment:
 1 - clone this repository:
 `git clone https://github.com/MaiconGilton/AtixLabsChallangeApp.git`
 
-2 - install the dependencies:
+2 - install the dependencies:`yarn install`
 
-`yarn install`
+3 - for IOS run, for android just skip this step:`npx pod-install`
 
-2 - for IOS run, for android just skip this step:
-
-`npx pod-install`
-
-3 - if you want to install app on the iOS simulator run:
+4 - if you want to install app on the iOS simulator run:
   `yarn ios`, for Android run `yarn android`
