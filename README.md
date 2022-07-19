@@ -9,7 +9,7 @@ To run this project on your local environment:
 
 2 - install the dependencies: `yarn install`
 
-3 - for IOS run, for android just skip this step: `npx pod-install`
+3 - for IOS run: `npx pod-install`
 
 4 - if you want to install app on the iOS simulator run:
   `yarn ios`, for Android run: `yarn android`
