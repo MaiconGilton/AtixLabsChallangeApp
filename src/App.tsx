@@ -1,19 +1,28 @@
 import React from 'react';
-import { SafeAreaView, StatusBar, useColorScheme } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { Platform, SafeAreaView, StatusBar, View } from 'react-native';
+import useTheme from './hooks/useTheme';
 import Navigator from './screens/Navigator';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    flex: 1,
-  };
+  const theme = useTheme();
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <SafeAreaView style={{ flex: 1, backgroundColor: theme.background }}>
+      <StatusBar barStyle='light-content' backgroundColor={theme.primaryColor} />
+
+      {/* force statusbar backgroundColor on ios */}
+      {Platform.OS === 'ios' &&
+        <View style={{
+          width: "100%",
+          height: 100,
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          backgroundColor: theme.primaryColor
+        }}
+        />
+      }
+
       <Navigator />
     </SafeAreaView>
   );
