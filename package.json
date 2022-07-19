@@ -1,11 +1,19 @@
 {
   "name": "atixlabschallangeapp",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "main": "index.js",
+  "repository": "https://github.com/MaiconGilton/AtixLabsChallangeApp.git",
+  "author": "Maicon Gilton <maicongilton@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "ca": "cd android && ./gradlew clean",
+    "pod": "cd ios/ && pod install && cd ..",
+    "apk": "react-native run-android --variant=release",
+    "a-bundle": "cd android && ./gradlew bundleRelease",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
